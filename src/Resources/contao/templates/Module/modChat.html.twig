@@ -1,0 +1,37 @@
+<div id="chat">
+    {% if ticket is defined %}
+        {% if env is defined and env == 'BE' %}
+            <h1>Discussion pour le ticket {{ticket.alias}}</h1>
+        {% else %}
+            <h2>Chat</h2>
+        {% endif %}
+        <div id="boiteEnvoi">
+            <form action="" id="nouveauMessage">
+                <input type="hidden" name="action" value="nouveauMessage">
+                <input type="hidden" name="REQUEST_TOKEN" value="{{rt}}">
+                <input type="text" name="message" required>
+                <input type="hidden" name="pid" value="{{pid}}">
+                {% if env is defined and env == 'BE' %}
+                    <input type="hidden" name="utilisateur" value="u{{user}}">
+                {% else %}
+                    <input type="hidden" name="utilisateur" value="m{{user}}">
+                {% endif %}
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+        <div id="discussion">
+            {% if messages is defined %}
+                {% for msg in messages %}
+                    <div data-id="{{msg.id}}" class='unMessage {{(msg.current == true)?'moi':'iel'}}'>
+                        {% if msg.current == true %}
+                            <span>Moi, {{msg.tstamp|date('d/m/Y H:i')}}</span>
+                        {% else %}
+                            <span>{{msg.exp}}, {{msg.tstamp|date('d/m/Y H:i')}}</span>
+                        {% endif %}
+                        <p>{{msg.message}}</p>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    {% endif %}
+</div>

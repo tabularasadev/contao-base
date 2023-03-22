@@ -1,0 +1,16 @@
+<h1>Mes tickets</h1>
+
+{% if tickets is defined %}
+    {% for t in tickets %}
+        <div class="ticket">
+            <p>Ouvert le {{t.tstamp|date('d/m/Y H:i')}}</span>
+            <p>Statut : {{t.printStatut()|raw}}</span>
+            <div class="description">{{t.description|raw}}</div>
+            <p class="bt1">
+                <a href="{{t.printUrl()}}">En savoir plus</a>
+            </p>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>Vous n'avez aucun ticket en cours</p>
+{% endif %}
