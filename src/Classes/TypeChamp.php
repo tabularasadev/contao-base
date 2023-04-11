@@ -14,12 +14,12 @@ namespace trdev\ContaoBaseBundle\Classes;
 class TypeChamp extends \Backend
 {
     #region Texte
-    public static function text($obligatoire = false)
+    public static function text($obligatoire = false, $classe = 'w50')
     {
         $item = array(
             'inputType' => 'text',
             'search'    => true,
-            'eval'      => array('maxlength' => 255, 'tl_class' => 'clr w50', 'mandatory' => $obligatoire),
+            'eval'      => array('maxlength' => 255, 'tl_class' => $classe, 'mandatory' => $obligatoire),
             'sql'       => "varchar(255) NOT NULL default ''",
         );
 
