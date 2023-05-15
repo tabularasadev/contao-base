@@ -65,7 +65,7 @@ class TypeChamp extends \Backend
     #endregion
 
     #region Switch
-    function switch ($obligatoire = false) {
+    function ouiNon($obligatoire = false) {
             $item = array(
                 'inputType' => 'checkbox',
                 'sql'       => "char(1) NOT NULL default '1'",
