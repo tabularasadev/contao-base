@@ -85,13 +85,14 @@ class TypeChamp extends \Backend
     /**
      * Créer un champ avec juste une case a coché, fait office de Oui/Non
      * @param bool $obligatoire
+     * @param int $default 0 ou 1
      * @return array
      */
-    public function ouiNon($obligatoire = false)
+    public function ouiNon($obligatoire = false, $default = '1')
     {
         $item = array(
             'inputType' => 'checkbox',
-            'sql'       => "char(1) NOT NULL default '1'",
+            'sql'       => "char(1) NOT NULL default '" . $default . "'",
             'eval'      => array('tl_class' => 'clr', 'mandatory' => $obligatoire),
         );
 
