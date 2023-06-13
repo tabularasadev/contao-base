@@ -88,7 +88,7 @@ class TypeChamp extends \Backend
      * @param int $default 0 ou 1
      * @return array
      */
-    public function ouiNon($obligatoire = false, $default = '1')
+    public function ouiNon($obligatoire = false, $default = '0')
     {
         $item = array(
             'inputType' => 'checkbox',
