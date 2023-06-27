@@ -351,6 +351,22 @@ class TypeChamp extends \Backend
     }
     #endregion
 
+    #region List Wizard
+    public static function listWizard()
+    {
+        $item = array(
+            'inputType' => 'listWizard',
+            'eval'      => array(
+                'maxlength' => 255,
+                'allowHtml' => false,
+            ),
+            'sql'       => 'blob NULL',
+        );
+
+        return $item;
+    }
+    #endregion
+
     #region Alias
     public static function alias($table)
     {
