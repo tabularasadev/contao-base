@@ -9,7 +9,7 @@
  * @copyright Tabula Rasa
  */
 
-namespace trdev\ContaoBlandinBundle\Classes;
+namespace trdev\ContaoBaseBundle\Classes;
 
 class TypeChamp extends \Backend
 {
@@ -67,8 +67,8 @@ class TypeChamp extends \Backend
                 'tl_class'  => 'clr',
                 'mandatory' => $obligatoire,
             ),
-            'load_callback' => array(array('trdev\ContaoBlandinBundle\Classes\TypeChamp', 'convertAbsoluteLinks')),
-            'save_callback' => array(array('trdev\ContaoBlandinBundle\Classes\TypeChamp', 'convertRelativeLinks')),
+            'load_callback' => array(array('trdev\ContaoBaseBundle\Classes\TypeChamp', 'convertAbsoluteLinks')),
+            'save_callback' => array(array('trdev\ContaoBaseBundle\Classes\TypeChamp', 'convertRelativeLinks')),
             'sql'           => "mediumtext NULL",
         );
 
@@ -482,7 +482,7 @@ class TypeChamp extends \Backend
 
     public static function printIcon($fichier)
     {
-        return sprintf('%simg/%s', $GLOBALS['assetsFolder']['ContaoBlandinBundle'], $fichier);
+        return sprintf('%simg/%s', $GLOBALS['assetsFolder']['ContaoBaseBundle'], $fichier);
     }
 
     public function convertAbsoluteLinks($strContent)
