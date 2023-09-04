@@ -111,7 +111,22 @@ $GLOBALS['TL_DCA'][$t] = array(
     ),
 );
 
-class tl_message extends Backend
+class tl_base extends Backend
 {
-
+    /*
+     public function generateAlias($varValue, DataContainer $dc)
+        {
+            if ($varValue == '') {
+                $varValue = BaseModel::getNewAlias();
+            }
+            return $varValue;
+        }
+    
+        public function editColumns($row, $label, DataContainer $dc, $args)
+        {
+            $args[0] = date('d/m/Y H:i', $args[0]);
+            $args[6] = FonctionsBlandin::printPrice($args[6]);
+            return $args;
+        }
+    */
 }
